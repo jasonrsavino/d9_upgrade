@@ -1,48 +1,124 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  address: 0
+  addtocal: 0
+  admin_toolbar: 0
+  allowed_formats: 0
   automated_cron: 0
+  better_exposed_filters: 0
   big_pipe: 0
   block: 0
+  block_class: 0
   block_content: 0
   breakpoint: 0
+  captcha: 0
   ckeditor: 0
+  ckeditor_accordion: 0
+  colorbox: 0
   comment: 0
   config: 0
+  config_update: 0
   contact: 0
+  context: 0
+  context_ui: 0
   contextual: 0
+  ctools: 0
+  datalayer: 0
   datetime: 0
   dblog: 0
+  devel: 0
+  diff: 0
   dynamic_page_cache: 0
+  eck: 0
   editor: 0
+  embed: 0
+  entity_clone: 0
+  entity_embed: 0
+  features: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
+  file_entity: 0
   filter: 0
+  flag: 0
+  fpa: 0
+  fullcalendar_view: 0
+  geofield: 0
+  geophp: 0
+  google_tag: 0
   help: 0
   history: 0
+  honeypot: 0
+  hotjar: 0
   image: 0
+  image_url_formatter: 0
+  imce: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
+  language: 0
+  libraries: 0
   link: 0
+  mailsystem: 0
+  menu_block: 0
+  menu_breadcrumb: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_plus: 0
+  migrate_source_csv: 0
+  migrate_tools: 0
+  migrate_upgrade: 0
+  mimemail: 0
+  multiselect: 0
   mysql: 0
   node: 0
   options: 0
   page_cache: 0
+  pantheon_advanced_page_cache: 0
   path: 0
   path_alias: 0
+  path_redirect_import: 0
+  plupload: 0
+  protected_pages: 0
   rdf: 0
+  recaptcha: 0
+  redirect: 0
+  redis: 0
+  rules: 0
+  schema_metatag: 0
+  schema_organization: 0
   search: 0
+  search_api: 0
+  search_api_grouping: 0
+  search_api_solr: 0
   shortcut: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
+  typed_data: 0
+  ultimate_cron: 0
   user: 0
+  video_embed_field: 0
+  viewfield: 0
+  views_ajax_history: 0
+  views_field_view: 0
+  views_load_more: 0
   views_ui: 0
+  webform: 0
+  pathauto: 1
+  xmlsitemap: 1
   views: 10
   standard: 1000
+  eu_cookie_compliance: 1001
 theme:
   olivero: 0
   claro: 0
