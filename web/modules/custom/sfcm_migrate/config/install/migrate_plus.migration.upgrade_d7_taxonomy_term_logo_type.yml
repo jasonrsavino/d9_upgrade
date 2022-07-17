@@ -1,4 +1,3 @@
-uuid: 239c39bb-f528-447a-b8f1-7839c0f686cf
 langcode: en
 status: true
 dependencies: {  }
@@ -81,6 +80,10 @@ process:
     -
       plugin: get
       source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: logo_type
@@ -89,4 +92,7 @@ migration_dependencies:
     - upgrade_d7_taxonomy_vocabulary
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_taxonomy_term
+    - upgrade_d7_metatag_field_instance_taxonomy_term_logo_type
+    - upgrade_d7_metatag_field_instance_widget_settings_taxonomy_term_logo_type
     - upgrade_d7_taxonomy_vocabulary

@@ -1,4 +1,3 @@
-uuid: 1cabe817-6b26-4d0a-8296-c2481096f749
 langcode: en
 status: true
 dependencies: {  }
@@ -102,6 +101,10 @@ process:
     -
       plugin: get
       source: field_related_content_title
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -110,5 +113,6 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance

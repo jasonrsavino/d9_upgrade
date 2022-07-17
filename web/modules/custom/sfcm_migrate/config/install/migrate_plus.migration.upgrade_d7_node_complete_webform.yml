@@ -1,4 +1,3 @@
-uuid: a619111e-122c-4345-bc35-63aeb7753197
 langcode: en
 status: true
 dependencies: {  }
@@ -126,6 +125,10 @@ process:
     -
       plugin: get
       source: field_above_form_components
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -134,5 +137,9 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_node
+    - upgrade_d7_metatag_field_instance_node_webform
+    - upgrade_d7_metatag_field_instance_widget_settings_node_webform

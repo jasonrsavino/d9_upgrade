@@ -1,4 +1,3 @@
-uuid: 2d81e873-2119-4d68-8e0e-ea3d7d7e72da
 langcode: en
 status: true
 dependencies: {  }
@@ -144,8 +143,10 @@ process:
       source: field_video_caption
   field_video_embed:
     -
-      plugin: get
+      plugin: sub_process
       source: field_video_embed
+      process:
+        value: video_url
   field_faculty_experience:
     -
       plugin: get
@@ -198,6 +199,10 @@ process:
       source: field_rjam_category
       process:
         target_id: tid
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -206,5 +211,9 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_node
+    - upgrade_d7_metatag_field_instance_node_faculty
+    - upgrade_d7_metatag_field_instance_widget_settings_node_faculty

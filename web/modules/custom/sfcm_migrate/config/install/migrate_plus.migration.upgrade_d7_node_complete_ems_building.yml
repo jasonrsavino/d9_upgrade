@@ -1,4 +1,3 @@
-uuid: 2c0575b9-cda6-416c-9e36-4cf217355db8
 langcode: en
 status: true
 dependencies: {  }
@@ -102,6 +101,10 @@ process:
     -
       plugin: get
       source: field_ems_building_time_zone_abb
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -110,5 +113,6 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance

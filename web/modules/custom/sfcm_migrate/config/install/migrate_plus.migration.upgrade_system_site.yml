@@ -1,4 +1,3 @@
-uuid: fea87f2b-25bd-4d46-a73d-2de6d1c4298c
 langcode: en
 status: true
 dependencies: {  }
@@ -45,22 +44,39 @@ process:
       source:
         - constants/slash
         - site_frontpage
+    -
+      plugin: static_map
+      map:
+        /: /node
+      bypass: true
   page/403:
     -
       plugin: concat
       source:
         - constants/slash
         - site_403
+    -
+      plugin: static_map
+      map:
+        /: ''
+      bypass: true
   page/404:
     -
       plugin: concat
       source:
         - constants/slash
         - site_404
+    -
+      plugin: static_map
+      map:
+        /: ''
+      bypass: true
   weight_select_max:
     -
-      plugin: get
+      plugin: default_value
       source: drupal_weight_select_max
+      strict: true
+      default_value: 100
   admin_compact_mode:
     -
       plugin: get

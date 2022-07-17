@@ -1,4 +1,3 @@
-uuid: 3d691757-c08e-4b60-8f94-64a3cf3cddba
 langcode: en
 status: true
 dependencies: {  }
@@ -82,6 +81,10 @@ process:
     -
       plugin: migration_lookup
       migration: upgrade_d7_file
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:user'
 migration_dependencies:
@@ -90,7 +93,12 @@ migration_dependencies:
   optional:
     - upgrade_d7_field_instance
     - upgrade_d7_file
+    - upgrade_language
+    - upgrade_default_language
     - upgrade_user_picture_field_instance
     - upgrade_user_picture_entity_display
     - upgrade_user_picture_entity_form_display
+    - upgrade_d7_metatag_field_user
+    - upgrade_d7_metatag_field_instance_user
+    - upgrade_d7_metatag_field_instance_widget_settings_user
     - upgrade_d7_user_role

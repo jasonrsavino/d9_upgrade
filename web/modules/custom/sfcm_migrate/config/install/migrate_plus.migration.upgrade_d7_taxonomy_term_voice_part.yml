@@ -1,4 +1,3 @@
-uuid: 77efd2b8-c91a-40cd-8a54-2cbd36fd940d
 langcode: en
 status: true
 dependencies: {  }
@@ -81,6 +80,10 @@ process:
     -
       plugin: get
       source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: voice_part

@@ -1,4 +1,3 @@
-uuid: 60196d12-1635-4a26-ae1f-9a47ded927e9
 langcode: en
 status: true
 dependencies: {  }
@@ -102,6 +101,10 @@ process:
       source: field_article_type
       process:
         target_id: tid
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -110,5 +113,9 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_node
+    - upgrade_d7_metatag_field_instance_node_external_articles
+    - upgrade_d7_metatag_field_instance_widget_settings_node_external_articles

@@ -1,4 +1,3 @@
-uuid: 2c525b7e-0f46-45e5-8504-af5b2ca3e9bb
 langcode: en
 status: true
 dependencies: {  }
@@ -81,6 +80,10 @@ process:
     -
       plugin: get
       source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: ems_statuses

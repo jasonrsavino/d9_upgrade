@@ -1,4 +1,3 @@
-uuid: 1eac1969-5a99-474f-915e-37480b3d34de
 langcode: en
 status: true
 dependencies: {  }
@@ -81,6 +80,10 @@ process:
     -
       plugin: get
       source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: department_titles

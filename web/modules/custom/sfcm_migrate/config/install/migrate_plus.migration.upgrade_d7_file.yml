@@ -1,4 +1,3 @@
-uuid: 8dd0f504-af42-4915-9b4c-385d3f4dc23b
 langcode: en
 status: true
 dependencies: {  }
@@ -60,6 +59,10 @@ process:
     -
       plugin: get
       source: uid
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:file'
 migration_dependencies:

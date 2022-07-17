@@ -1,4 +1,3 @@
-uuid: b263aa56-f0ec-46fb-9440-af0b413ef587
 langcode: en
 status: true
 dependencies: {  }
@@ -81,6 +80,10 @@ process:
     -
       plugin: get
       source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: pillars

@@ -1,4 +1,3 @@
-uuid: 4685584a-2436-47ff-ba60-cfaa6e6b1001
 langcode: en
 status: true
 dependencies: {  }
@@ -78,11 +77,11 @@ process:
       source: comment
   field_venue_address:
     -
-      plugin: get
+      plugin: addressfield
       source: field_venue_address
   field_venue_location:
     -
-      plugin: get
+      plugin: geofield_d7d8
       source: field_venue_location
   field_shortened_name:
     -
@@ -92,6 +91,10 @@ process:
     -
       plugin: field_link
       source: field_view_map_url
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -100,5 +103,9 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_node
+    - upgrade_d7_metatag_field_instance_node_venue
+    - upgrade_d7_metatag_field_instance_widget_settings_node_venue

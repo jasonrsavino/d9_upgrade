@@ -1,4 +1,3 @@
-uuid: 67fc00c2-94f5-4b1f-8bcb-8fa96d8326f4
 langcode: en
 status: true
 dependencies: {  }
@@ -98,6 +97,10 @@ process:
     -
       plugin: get
       source: field_timeline_entry_credits
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity_complete:node'
   translations: true
@@ -106,5 +109,9 @@ migration_dependencies:
   required:
     - upgrade_d7_user
     - upgrade_d7_node_type
+    - upgrade_language
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_node
+    - upgrade_d7_metatag_field_instance_node_timeline_entry
+    - upgrade_d7_metatag_field_instance_widget_settings_node_timeline_entry

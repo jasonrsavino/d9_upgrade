@@ -1,4 +1,3 @@
-uuid: d835974f-5aff-44fd-84a5-10e22ec7c12f
 langcode: en
 status: true
 dependencies: {  }
@@ -99,6 +98,10 @@ process:
       source: field_ems_status
       process:
         target_id: tid
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: ems_calendar_logic
@@ -107,4 +110,7 @@ migration_dependencies:
     - upgrade_d7_taxonomy_vocabulary
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_taxonomy_term
+    - upgrade_d7_metatag_field_instance_taxonomy_term_ems_calendar_logic
+    - upgrade_d7_metatag_field_instance_widget_settings_taxonomy_term_ems_calendar_logic
     - upgrade_d7_taxonomy_vocabulary

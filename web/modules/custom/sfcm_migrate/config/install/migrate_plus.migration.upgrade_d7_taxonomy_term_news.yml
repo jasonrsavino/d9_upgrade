@@ -1,4 +1,3 @@
-uuid: a19d3d0e-650f-4a7b-814e-803a01dd9407
 langcode: en
 status: true
 dependencies: {  }
@@ -81,6 +80,10 @@ process:
     -
       plugin: get
       source: language
+  field_metatag:
+    -
+      plugin: d7_metatag_entities
+      source: pseudo_metatag_entities
 destination:
   plugin: 'entity:taxonomy_term'
   default_bundle: news
@@ -89,4 +92,7 @@ migration_dependencies:
     - upgrade_d7_taxonomy_vocabulary
   optional:
     - upgrade_d7_field_instance
+    - upgrade_d7_metatag_field_taxonomy_term
+    - upgrade_d7_metatag_field_instance_taxonomy_term_news
+    - upgrade_d7_metatag_field_instance_widget_settings_taxonomy_term_news
     - upgrade_d7_taxonomy_vocabulary

@@ -1,4 +1,3 @@
-uuid: 36bbb6f8-be54-49d2-bf11-8ab2575131fa
 langcode: en
 status: true
 dependencies: {  }
@@ -89,10 +88,25 @@ process:
         file_mfw: file_generic
         filefield_widget: file_generic
         taxonomy_term_reference: taxonomy_term_reference_default
+        video_embed_field_video: video_embed_field_textfield
+        addressfield_standard: address_default
+        geofield_wkt: geofield_default
+        geofield_geojson: geofield_default
+        geofield_kml: geofield_default
+        geofield_gpx: geofield_default
+        geofield_geohash: geofield_default
+        geofield_latlon: geofield_latlon
+        geofield_lat: geofield_default
+        geofield_lon: geofield_default
+        geofield_geo_type: geofield_default
+        geofield_def_list: geofield_default
+        geofield_description: geofield_default
+        geofield_openlayers: geofield_default
         number_default: number_default_default
         date: datetime_default
         datetime: datetime_default
         datestamp: datetime_timestamp
+        viewfield_select: viewfield_select
   options/settings:
     -
       plugin: field_instance_widget_settings
