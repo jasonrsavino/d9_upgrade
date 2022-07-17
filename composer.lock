@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a64a2d2fe726d0958b9695a56d860de",
+    "content-hash": "faaf8233d29e86556eb1ea2881446303",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3560,26 +3560,23 @@
         },
         {
             "name": "drupal/eck",
-            "version": "1.0.0-beta2",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eck.git",
-                "reference": "8.x-1.0-beta2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eck-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "6c671eef0fc89cc48cee70666548871e6321ec6e"
+                "reference": "1e0f94496c4608d50f911db75e5c69a3d9ef95d7"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8.8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1591283484",
+                    "version": "8.x-1.0-beta2+38-dev",
+                    "datestamp": "1631355757",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3588,7 +3585,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -12622,7 +12619,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/datalayer": 10,
-        "drupal/eck": 10,
+        "drupal/eck": 20,
         "drupal/entity_clone": 10,
         "drupal/file_entity": 10,
         "drupal/flag": 10,

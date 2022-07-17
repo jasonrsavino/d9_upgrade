@@ -38,7 +38,7 @@
         "drupal/datalayer": "^1.0@beta",
         "drupal/devel": "^4.1",
         "drupal/diff": "^1.0",
-        "drupal/eck": "^1.0@beta",
+        "drupal/eck": "1.x-dev@dev",
         "drupal/entity_clone": "^1.0@beta",
         "drupal/entity_embed": "^1.2",
         "drupal/eu_cookie_compliance": "^1.19",
