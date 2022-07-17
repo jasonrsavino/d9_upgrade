@@ -1,0 +1,12 @@
+uuid: 6c4518f7-4ef5-4f51-92ea-f850f508415b
+langcode: en
+status: true
+dependencies: {  }
+id: migrate_drupal_7
+label: 'SFCM Drupal 7 Migrations'
+description: 'SFCM Migrations generated from drush migrate-upgrade.'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: migrate

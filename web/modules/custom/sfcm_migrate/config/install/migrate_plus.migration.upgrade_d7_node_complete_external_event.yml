@@ -1,0 +1,142 @@
+uuid: 832c2f8a-f533-4f71-b045-7209df8c4d9d
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_external_event
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (External Event)'
+source:
+  plugin: d7_node_complete
+  node_type: external_event
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_external_event/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_additional_information:
+    -
+      plugin: get
+      source: field_additional_information
+  field_email_address:
+    -
+      plugin: sub_process
+      source: field_email_address
+      process:
+        value: email
+  field_external_article_image:
+    -
+      plugin: sub_process
+      source: field_external_article_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_external_article_link:
+    -
+      plugin: field_link
+      source: field_external_article_link
+  field_external_event_date:
+    -
+      plugin: sub_process
+      source: field_external_event_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_external_event_location:
+    -
+      plugin: get
+      source: field_external_event_location
+  field_external_event_type:
+    -
+      plugin: get
+      source: field_external_event_type
+  field_submitter_name:
+    -
+      plugin: get
+      source: field_submitter_name
+  field_year_graduated:
+    -
+      plugin: get
+      source: field_year_graduated
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: external_event
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance

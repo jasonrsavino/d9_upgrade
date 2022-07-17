@@ -1,0 +1,182 @@
+uuid: e0bd6e9f-8588-4ca1-a028-d2a8902345ae
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_page
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Landing Page)'
+source:
+  plugin: d7_node_complete
+  node_type: page
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_page/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_hero_caption:
+    -
+      plugin: get
+      source: field_hero_caption
+  field_hero_heading:
+    -
+      plugin: get
+      source: field_hero_heading
+  field_hero_image:
+    -
+      plugin: sub_process
+      source: field_hero_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_content_heading:
+    -
+      plugin: get
+      source: field_content_heading
+  field_hero_title:
+    -
+      plugin: get
+      source: field_hero_title
+  field_hero_story:
+    -
+      plugin: get
+      source: field_hero_story
+  field_landing_page_audio:
+    -
+      plugin: get
+      source: field_landing_page_audio
+  field_add_default_ctas:
+    -
+      plugin: get
+      source: field_add_default_ctas
+  field_intro_cta:
+    -
+      plugin: field_link
+      source: field_intro_cta
+  field_component:
+    -
+      plugin: get
+      source: field_component
+  field_hero_optional_cta:
+    -
+      plugin: field_link
+      source: field_hero_optional_cta
+  field_hero_story_event:
+    -
+      plugin: get
+      source: field_hero_story_event
+  field_hero_story_type:
+    -
+      plugin: get
+      source: field_hero_story_type
+  field_cta_labels:
+    -
+      plugin: get
+      source: field_cta_labels
+  field_mobile_ctas_ref:
+    -
+      plugin: get
+      source: field_mobile_ctas_ref
+  field_hero_full_video:
+    -
+      plugin: get
+      source: field_hero_full_video
+  field_hero_snippet_video:
+    -
+      plugin: sub_process
+      source: field_hero_snippet_video
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_hero_video_cta_text:
+    -
+      plugin: get
+      source: field_hero_video_cta_text
+  field_hide_hero_logo:
+    -
+      plugin: get
+      source: field_hide_hero_logo
+  field_hide_hero_video:
+    -
+      plugin: get
+      source: field_hide_hero_video
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: page
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance

@@ -1,0 +1,476 @@
+uuid: 27f6b741-aa5c-44c8-bbcc-f9c6d063253c
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_ems_booking
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Event)'
+source:
+  plugin: d7_node_complete
+  node_type: ems_booking
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_ems_booking/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_event_audio:
+    -
+      plugin: get
+      source: field_event_audio
+  field_event_banner:
+    -
+      plugin: get
+      source: field_event_banner
+  field_event_banner_caption:
+    -
+      plugin: get
+      source: field_event_banner_caption
+  field_event_banner_image:
+    -
+      plugin: sub_process
+      source: field_event_banner_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_event_buy_tickets:
+    -
+      plugin: field_link
+      source: field_event_buy_tickets
+  field_event_cast_members:
+    -
+      plugin: get
+      source: field_event_cast_members
+  field_event_donation:
+    -
+      plugin: get
+      source: field_event_donation
+  field_event_ensemble_members:
+    -
+      plugin: get
+      source: field_event_ensemble_members
+  field_event_headline:
+    -
+      plugin: get
+      source: field_event_headline
+  field_event_ticket_info:
+    -
+      plugin: get
+      source: field_event_ticket_info
+  field_event_ticketed:
+    -
+      plugin: get
+      source: field_event_ticketed
+  field_event_venue:
+    -
+      plugin: get
+      source: field_event_venue
+  field_hero_image:
+    -
+      plugin: sub_process
+      source: field_hero_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_teaser_image:
+    -
+      plugin: sub_process
+      source: field_teaser_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_event_title:
+    -
+      plugin: get
+      source: field_event_title
+  field_has_hero:
+    -
+      plugin: get
+      source: field_has_hero
+  field_component:
+    -
+      plugin: get
+      source: field_component
+  field_event_category:
+    -
+      plugin: sub_process
+      source: field_event_category
+      process:
+        target_id: tid
+  field_ems_addedby:
+    -
+      plugin: get
+      source: field_ems_addedby
+  field_ems_booking_id:
+    -
+      plugin: get
+      source: field_ems_booking_id
+  field_ems_calendar_logic:
+    -
+      plugin: sub_process
+      source: field_ems_calendar_logic
+      process:
+        target_id: tid
+  field_ems_contact:
+    -
+      plugin: get
+      source: field_ems_contact
+  field_ems_contactemailaddress:
+    -
+      plugin: sub_process
+      source: field_ems_contactemailaddress
+      process:
+        value: email
+  field_ems_event_type:
+    -
+      plugin: sub_process
+      source: field_ems_event_type
+      process:
+        target_id: tid
+  field_ems_group_type:
+    -
+      plugin: sub_process
+      source: field_ems_group_type
+      process:
+        target_id: tid
+  field_ems_status:
+    -
+      plugin: sub_process
+      source: field_ems_status
+      process:
+        target_id: tid
+  field_ems_vipevent:
+    -
+      plugin: get
+      source: field_ems_vipevent
+  field_event_faculty_list:
+    -
+      plugin: get
+      source: field_event_faculty_list
+  field_ems_altcontact:
+    -
+      plugin: get
+      source: field_ems_altcontact
+  field_ems_bookingtime:
+    -
+      plugin: sub_process
+      source: field_ems_bookingtime
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+        end_value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value2
+  field_ems_building:
+    -
+      plugin: get
+      source: field_ems_building
+  field_ems_buildingcode:
+    -
+      plugin: get
+      source: field_ems_buildingcode
+  field_ems_buildingid:
+    -
+      plugin: get
+      source: field_ems_buildingid
+  field_ems_changedby:
+    -
+      plugin: get
+      source: field_ems_changedby
+  field_ems_closedallday:
+    -
+      plugin: get
+      source: field_ems_closedallday
+  field_ems_closetime:
+    -
+      plugin: sub_process
+      source: field_ems_closetime
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_ems_dateadded:
+    -
+      plugin: sub_process
+      source: field_ems_dateadded
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_ems_datechanged:
+    -
+      plugin: sub_process
+      source: field_ems_datechanged
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_ems_eventcoordinator:
+    -
+      plugin: get
+      source: field_ems_eventcoordinator
+  field_ems_eventtime:
+    -
+      plugin: sub_process
+      source: field_ems_eventtime
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+        end_value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value2
+  field_ems_eventtypedescription:
+    -
+      plugin: get
+      source: field_ems_eventtypedescription
+  field_ems_gmttime:
+    -
+      plugin: sub_process
+      source: field_ems_gmttime
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i'
+          to_format: 'Y-m-d\TH:i'
+          source: value
+  field_ems_groupid:
+    -
+      plugin: get
+      source: field_ems_groupid
+  field_ems_groupname:
+    -
+      plugin: get
+      source: field_ems_groupname
+  field_ems_hvaczone:
+    -
+      plugin: get
+      source: field_ems_hvaczone
+  field_ems_opentime:
+    -
+      plugin: sub_process
+      source: field_ems_opentime
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_ems_reservationid:
+    -
+      plugin: get
+      source: field_ems_reservationid
+  field_ems_room:
+    -
+      plugin: get
+      source: field_ems_room
+  field_ems_roomcode:
+    -
+      plugin: get
+      source: field_ems_roomcode
+  field_ems_roomdescription:
+    -
+      plugin: get
+      source: field_ems_roomdescription
+  field_ems_roomid:
+    -
+      plugin: get
+      source: field_ems_roomid
+  field_ems_roomtype:
+    -
+      plugin: get
+      source: field_ems_roomtype
+  field_ems_roomtypeid:
+    -
+      plugin: get
+      source: field_ems_roomtypeid
+  field_ems_setupcount:
+    -
+      plugin: get
+      source: field_ems_setupcount
+  field_ems_setuptypedescription:
+    -
+      plugin: get
+      source: field_ems_setuptypedescription
+  field_ems_startbookingdate:
+    -
+      plugin: sub_process
+      source: field_ems_startbookingdate
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+  field_ems_statustypeid:
+    -
+      plugin: get
+      source: field_ems_statustypeid
+  field_ems_timezone:
+    -
+      plugin: get
+      source: field_ems_timezone
+  field_ems_vip:
+    -
+      plugin: get
+      source: field_ems_vip
+  field_overwrite_ems_event_type:
+    -
+      plugin: get
+      source: field_overwrite_ems_event_type
+  field_event_date_caption:
+    -
+      plugin: get
+      source: field_event_date_caption
+  field_event_pull_quote:
+    -
+      plugin: get
+      source: field_event_pull_quote
+  field_works_by:
+    -
+      plugin: get
+      source: field_works_by
+  field_event_subtitle:
+    -
+      plugin: get
+      source: field_event_subtitle
+  field_event_extra_information:
+    -
+      plugin: get
+      source: field_event_extra_information
+  field_department_information:
+    -
+      plugin: get
+      source: field_department_information
+  field_event_ticket_section_label:
+    -
+      plugin: get
+      source: field_event_ticket_section_label
+  field_ticket_section_replacement:
+    -
+      plugin: get
+      source: field_ticket_section_replacement
+  field_venue_replacement_content:
+    -
+      plugin: get
+      source: field_venue_replacement_content
+  field_mobile_ctas_ref:
+    -
+      plugin: get
+      source: field_mobile_ctas_ref
+  field_spektrix_event_id:
+    -
+      plugin: get
+      source: field_spektrix_event_id
+  field_spektrix_btn_text_override:
+    -
+      plugin: get
+      source: field_spektrix_btn_text_override
+  field_hide_newsletter_block:
+    -
+      plugin: get
+      source: field_hide_newsletter_block
+  field_spektrix_instance_id:
+    -
+      plugin: get
+      source: field_spektrix_instance_id
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: ems_booking
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance

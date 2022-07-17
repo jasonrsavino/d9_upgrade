@@ -1,0 +1,210 @@
+uuid: 2d81e873-2119-4d68-8e0e-ea3d7d7e72da
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_complete_faculty
+class: Drupal\node\Plugin\migrate\D7NodeTranslation
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node complete (Faculty)'
+source:
+  plugin: d7_node_complete
+  node_type: faculty
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: timestamp
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  content_translation_source:
+    -
+      plugin: get
+      source: source_langcode
+  comment_node_faculty/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_faculty_department:
+    -
+      plugin: get
+      source: field_faculty_department
+  field_faculty_headshot:
+    -
+      plugin: sub_process
+      source: field_faculty_headshot
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_faculty_email:
+    -
+      plugin: sub_process
+      source: field_faculty_email
+      process:
+        value: email
+  field_faculty_membership:
+    -
+      plugin: get
+      source: field_faculty_membership
+  field_faculty_office:
+    -
+      plugin: get
+      source: field_faculty_office
+  field_faculty_phone:
+    -
+      plugin: get
+      source: field_faculty_phone
+  field_faculty_questions:
+    -
+      plugin: get
+      source: field_faculty_questions
+  field_faculty_social:
+    -
+      plugin: field_link
+      source: field_faculty_social
+  field_faculty_website:
+    -
+      plugin: field_link
+      source: field_faculty_website
+  field_hero_caption:
+    -
+      plugin: get
+      source: field_hero_caption
+  field_hero_image:
+    -
+      plugin: sub_process
+      source: field_hero_image
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_video_caption:
+    -
+      plugin: get
+      source: field_video_caption
+  field_video_embed:
+    -
+      plugin: get
+      source: field_video_embed
+  field_faculty_experience:
+    -
+      plugin: get
+      source: field_faculty_experience
+  field_has_hero:
+    -
+      plugin: get
+      source: field_has_hero
+  field_faculty_audio:
+    -
+      plugin: get
+      source: field_faculty_audio
+  field_faculty_category:
+    -
+      plugin: sub_process
+      source: field_faculty_category
+      process:
+        target_id: tid
+  field_additional_links:
+    -
+      plugin: field_link
+      source: field_additional_links
+  field_faculty_title:
+    -
+      plugin: get
+      source: field_faculty_title
+  field_component:
+    -
+      plugin: get
+      source: field_component
+  field_faculty_first_name:
+    -
+      plugin: get
+      source: field_faculty_first_name
+  field_faculty_last_name:
+    -
+      plugin: get
+      source: field_faculty_last_name
+  field_lower_body:
+    -
+      plugin: get
+      source: field_lower_body
+  field_mobile_ctas_ref:
+    -
+      plugin: get
+      source: field_mobile_ctas_ref
+  field_rjam_category:
+    -
+      plugin: sub_process
+      source: field_rjam_category
+      process:
+        target_id: tid
+destination:
+  plugin: 'entity_complete:node'
+  translations: true
+  default_bundle: faculty
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
